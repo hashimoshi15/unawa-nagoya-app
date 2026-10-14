@@ -1,0 +1,44 @@
+{
+  "id": "/unawa-nagoya-app/",
+  "name": "うな和 名古屋（試作）",
+  "short_name": "うな和",
+  "description": "名古屋のうなぎ料理店「うな和」のアプリの試作（非公式）。三つの店の営業時間・お品書き・クーポン・お知らせ。",
+  "lang": "ja",
+  "dir": "ltr",
+  "start_url": "/unawa-nagoya-app/",
+  "scope": "/unawa-nagoya-app/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#F8F6F1",
+  "background_color": "#F8F6F1",
+  "categories": [
+    "food",
+    "lifestyle"
+  ],
+  "icons": [
+    {
+      "src": "/unawa-nagoya-app/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/unawa-nagoya-app/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/unawa-nagoya-app/icons/maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/unawa-nagoya-app/icons/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!--
+      Web の HTML の外枠（app.json の web.output が "single" のときに expo export・expo start が使う）。
+      html の lang（app.json の web.lang）と title（name）は書き出しのときに置き換わり、theme-color（web.themeColor）・
+      favicon・JS の script はその後ろに足される（置き換えの印はこの説明に書かない：最初の 1 か所だけが置き換わるため）。
+      src/app/+html.tsx は静的レンダリング（"static"）のときの外枠で、同じ head を持つ（どちらかを変えたら両方を直す）。
+    -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>うな和 名古屋</title>
+    <meta name="description" content="名古屋のうなぎ料理店「うな和」のアプリの試作（非公式）。三つの店の営業時間・お品書き・クーポン・お知らせ。" />
+    <!-- 試作（非公式）なので検索に載せない -->
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- ホーム画面に追加したときにアプリとして開く（PWA）。アイコンは scripts/generate-brand-assets.py が書き出す -->
+    <link rel="manifest" href="/unawa-nagoya-app/manifest.webmanifest" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="うな和" />
+    <link rel="apple-touch-icon" href="/unawa-nagoya-app/icons/apple-touch-icon.png" />
+
+    <!-- The `react-native-web` recommended style reset: https://necolas.github.io/react-native-web/docs/setup/#root-element -->
+    <style id="expo-reset">
+      /* These styles make the body full-height */
+      html,
+      body {
+        height: 100%;
+      }
+      /* These styles disable body scrolling if you are using <ScrollView> */
+      body {
+        overflow: hidden;
+      }
+      /* These styles make the root element full-height */
+      #root {
+        display: flex;
+        height: 100%;
+        flex: 1;
+      }
+    </style>
+    <style id="unawa-shell">
+      /* 障子紙の白（colors.bg.canvas）。読み込み中も同じ地。端末がダークモードでも明るいまま */
+      html,
+      body {
+        margin: 0;
+        background-color: #f8f6f1;
+        color: #1f1c18;
+        color-scheme: light;
+        /* アプリらしく：ページ全体の引っ張り（更新・跳ね返り）を出さない */
+        overscroll-behavior: none;
+      }
+      html {
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+      }
+      body {
+        /* タップしたときの灰色の四角を出さない（押したときの反応はアプリが描く） */
+        -webkit-tap-highlight-color: transparent;
+      }
+      /* ダブルタップの拡大を止める（二本指の拡大・スクロールはそのまま。部品が自分で指定したものが優先） */
+      :where(*) {
+        touch-action: manipulation;
+      }
+      /* 押せるものは、長押しのメニューと文字の選択を出さない（本文は選べるまま） */
+      [role='button'],
+      [role='link'],
+      [role='tab'],
+      a {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select: none;
+      }
+      noscript p {
+        margin: 40vh 24px 0;
+        text-align: center;
+        font: 15px/1.6 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
+      }
+    </style>
+  <meta name="theme-color" content="#F8F6F1">
+<link rel="icon" href="/unawa-nagoya-app/favicon.ico"/></head>
+
+  <body>
+    <noscript><p>このアプリを表示するには、JavaScript を有効にしてください。</p></noscript>
+    <div id="root"></div>
+  <script src="/unawa-nagoya-app/_expo/static/js/web/entry-42e52ee009790f0241ba4ba37f2806b5.js" defer></script>
+</body>
+</html>
